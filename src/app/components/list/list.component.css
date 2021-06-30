@@ -1,0 +1,43 @@
+.list-item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.avatar {
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.info {
+    width: 60%;
+    padding: 0.5rem;
+
+}
+
+.info-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    color: grey;
+
+}
+
+.info-chat {
+    margin-bottom: 1.5rem;
+
+}
+
+.list-item-delete {
+    height: 1.5rem;
+    width: 1.5rem;
+    float: right;
+    cursor: pointer;
+
+}

@@ -1,0 +1,21 @@
+<div class="list-item-content">
+    <div class="avatar">
+        <img class="img-ava" [src]="message.avatarUrl">
+    </div>
+
+    <div class="info">
+        <div class="info-name">
+            <p>Seller Name: {{ message.sellerName }}</p>
+
+            <p>{{ message.lastModified }}</p>
+        </div>
+
+        <div class="info-chat">
+            <h4>{{ message.name }}</h4>
+
+            <p>{{ message.unreadMessage }}</p>
+        </div>
+
+        <img class="list-item-delete" src="assets/icon/bin.png">
+    </div>
+</div>

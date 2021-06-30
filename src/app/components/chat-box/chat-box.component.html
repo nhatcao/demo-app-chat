@@ -1,0 +1,41 @@
+<div class="chat-box-main" *ngIf="message">
+    <div class="chat-box-nav">
+        <p class="chat-box-name">
+            Name
+        </p>
+        
+        <img class="chat-box-close" src="/assets/icon/close.png" (click)="exit()">
+    </div>
+
+    <div class="chat-box-content">
+        <div *ngFor="let chat of chats">
+            <div [class]="chat.isUser? 'chat-box-item' : 'chat-box-item visitor'">
+                <span [class]="chat.isUser? 'chat-box-own' : 'chat-box-visitor'" >
+                    <p [innerHTML]="chat.message"></p>
+                    
+                    <span class="chat-box-info">
+                        26/5/2021 8:04 AM
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-box-action">
+        <div class="send-action">
+            <textarea class="chat-box-input" type="text" placeholder="Please enter your reply here..." rows="5"></textarea>
+            
+            <button class="btn-send">SEND <img class="icon" src="/assets/icon/send.png"></button>
+        </div>
+
+        <div class="extend-action">
+            <div class="chat-box-add-file">
+                <label class="icon btn-attachment" for="myfile"></label>
+                <input hidden [(ngModel)]="input" #ngModel type="file" id="myfile">
+                {{ input }}
+                <img [hidden]="!input" class="chat-box-close" src="/assets/icon/close.png" (click)="deleteResource()">
+            </div>
+            <button *ngIf="input" class="btn-view">View Source</button>
+        </div>
+    </div>
+</div>

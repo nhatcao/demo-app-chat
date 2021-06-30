@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="search-box">
+        <img class="search-box-icon" src="assets/icon/search.png">
+        <input class="search-box-input" type="text" placeholder="Search for message">
+    </div>
+    
+    <div class="box-content">
+
+        <div class="box-item list">
+            <div class="list-content">
+                <div class="list-group">
+                    <div *ngFor="let message of messages">
+                        <div class="list-item" (click)="selected(message)">
+                            <app-list [message]="message"></app-list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="box-item chat-box" *ngIf="selectedMessage">
+            <app-chat-box [message]="selectedMessage" (messChange)="selectedMessage=$event"></app-chat-box>
+        </div>
+    
+    </div>
+</div>
